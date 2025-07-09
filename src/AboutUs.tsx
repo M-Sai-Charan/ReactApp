@@ -16,7 +16,6 @@ const AboutUs: React.FC = () => {
           to deliver timeless imagery. We believe every smile, every glance, and every detail
           deserves to be immortalized with perfection.
         </p>
-        <button className="about-button">Meet Our Team</button>
       </div>
     </div>
   );

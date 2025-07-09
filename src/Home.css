@@ -1,59 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
-.multi-image-hero {
-  display: flex;
-  width: 100%;
+.video-hero {
   height: 100vh;
+  width: 100%;
   position: relative;
   overflow: hidden;
   font-family: 'Josefin Sans', sans-serif;
 }
 
-/* Each image block */
-.hero-image {
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.5s ease;
-}
-
-/* Zoom on hover */
-.hero-image:hover {
-  transform: scale(1.05);
-}
-
-/* Text overlay centered on all images */
-.hero-overlay-content {
+.bg-video {
   position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem 3rem;
-  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.6); /* Slight dark overlay */
 }
 
-/* Brand title styling */
+.hero-overlay-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
 .brand-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #ffd700;
   margin-bottom: 1rem;
+  letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-/* Tagline under title */
 .tagline {
   font-size: 1.4rem;
   color: #e0e0e0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* CTA button styling */
 .cta-button {
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   font-size: 1rem;
   color: #000;
   background-color: #ffd700;
@@ -67,31 +60,13 @@
   background-color: #e6be00;
 }
 
-/* ✅ Mobile Responsive Layout */
-@media (max-width: 768px) {
-  .multi-image-hero {
-    flex-direction: column;
-    height: auto;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-
-  .hero-image {
-    height: 33vh;
-  }
-
-  .hero-overlay-content {
-    padding: 1.5rem 2rem;
-  }
-
-  .brand-title {
-    font-size: 2rem;
-  }
-
-  .tagline {
-    font-size: 1.1rem;
-  }
-
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.8rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -20,7 +20,7 @@ const Home: React.FC = () => {
 
       <div className="hero-overlay-content">
         <h1 className="brand-title">One Look Photography</h1>
-        <p className="tagline">Capturing Moments. Creating Memories.</p>
+        <p className="tagline">Capturing Moments. Creating Memories</p>
       </div>
     </div>
   );

@@ -21,25 +21,74 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .service-card {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2.5rem 2rem;
   border-radius: 1.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.05);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2) rotate(-3deg);
+  transition: transform 0.3s ease;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, #ffd70099, transparent, #ffd70099);
+  background-size: 200% 200%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  animation: glowAnim 3s linear infinite;
+}
+
+@keyframes glowAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .service-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
 }
 
 .service-name {
@@ -52,4 +101,25 @@
   font-size: 1rem;
   color: #ccc;
   line-height: 1.6;
+}
+
+/* ✅ Mobile: Horizontal Scroll */
+@media (max-width: 768px) {
+  .services-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-card {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    margin-right: 1rem;
+  }
+
+  .services-grid::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -7,6 +7,7 @@ import Gallery from "./Gallery";
 import ClientTemplate from "./ClientTemplate";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
+import Stats from "./Stats";
 const App: React.FC = () => {
   return (
     <div className="App scroll-container">
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <section className="scroll-section"><Gallery /></section>
       {/* <section className="scroll-section"><ClientTemplate /></section> */}
       <section className="scroll-section"><Testimonials /></section>
+      <section className="scroll-section"><Stats /></section>
       <section className="scroll-section"><Footer /></section>
     </div>
   );

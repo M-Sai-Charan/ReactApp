@@ -34,7 +34,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    static: path.resolve(__dirname, 'build'),
     port: 3000,
     open: true,
     hot: true,

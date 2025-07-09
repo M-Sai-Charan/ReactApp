@@ -1,0 +1,146 @@
+.client-template {
+  font-family: 'Josefin Sans', sans-serif;
+  background: #000;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('../src/assets/gallery/image7.jpg') center/cover no-repeat;
+  padding: 6rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.names {
+  font-size: 3rem;
+  color: #ffd700;
+  margin: 0;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.about-us {
+  margin: 3rem 0;
+}
+
+.about-us h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.gallery-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+}
+
+.gallery-scroll img {
+  height: 180px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.event-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.event-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  min-width: 220px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.invoice-summary {
+  margin-top: 2rem;
+}
+
+.invoice-summary h2 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+}
+
+.paid {
+  background: green;
+}
+
+.due {
+  background: crimson;
+}
+
+.terms {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 2rem 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.approve, .reject {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.approve {
+  background-color: #00ff88;
+  color: #000;
+}
+
+.reject {
+  background-color: #ff3e3e;
+  color: #fff;
+}
+
+.approve:hover {
+  background-color: #00cc6a;
+}
+
+.reject:hover {
+  background-color: #cc2b2b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .event-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-scroll img {
+    height: 140px;
+  }
+
+  .names {
+    font-size: 2.2rem;
+  }
+}

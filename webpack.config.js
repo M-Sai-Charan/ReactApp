@@ -2,31 +2,35 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true, // clears dist folder before each build
+    clean: true, // Clears dist folder before each build
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // allow importing JS/JSX without extensions
+    extensions: ['.ts', '.tsx', '.js', '.jsx'], // ✅ Support for TypeScript and JS
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,      // handles JS and JSX
+        test: /\.(js|jsx|ts|tsx)$/,  // ✅ Handles both TSX and JSX
         exclude: /node_modules/,
         use: 'babel-loader',
       },
       {
-        test: /\.css$/i,          // handles Tailwind CSS
+        test: /\.css$/i,             // ✅ Tailwind CSS
         use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/i, // ✅ Images
+        type: 'asset/resource',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // your HTML template
+      template: './public/index.html', // ✅ Your HTML template
     }),
   ],
   devServer: {

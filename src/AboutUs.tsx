@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutUs.css";
-import bgImage from "../src/assets/gallery/image7.jpg"; // Add your own image here
+import bgImage from "../src/assets/gallery/image6.jpg"; // Add your own image here
 
 const AboutUs: React.FC = () => {
   return (

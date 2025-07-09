@@ -2,10 +2,13 @@
   "name": "react",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://M-Sai-Charan.github.io/ReactApp",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +31,7 @@
     "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.1.1",
